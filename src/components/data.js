@@ -5,14 +5,24 @@ import toast, {Toaster} from 'react-hot-toast'
 
 const Data = ()=>{
 
+
+    const save = ()=>{
+
+        toast.success("Saved!")
+    }
+
+    const deploy = ()=>{
+        toast.success("Deployed!")
+    }
+
     const showAlert = (status)=>{
         if(status)
         {
-            toast.success("Data fetched")
+            toast.success("Data Fetched")
         }
         else
         {
-            toast.error("Couldn't fetch data")
+            toast.error("Couldn't Fetch Data")
         }
 
     }
@@ -93,8 +103,12 @@ const Data = ()=>{
         <h1 className="font-bold tracking-wide">Project 1 Model 1 | <span className="text-gray-400">transformation object</span></h1>
     </div>
     <div className="p-2 mx-5 space-x-3">
-        <button className="bg-blue-500 text-white px-4 rounded-sm text-sm font-semibold">SAVE</button>
-        <button className="bg-orange-400 text-white px-4 rounded-sm text-sm font-semibold">DEPLOY</button>
+        <button className="bg-blue-500 text-white px-4 rounded-sm text-sm font-semibold"
+        onClick={()=>save()}
+        >SAVE</button>
+        <button className="bg-orange-400 text-white px-4 rounded-sm text-sm font-semibold"
+        onClick={()=>deploy()}
+        >DEPLOY</button>
     </div>
 
    </div>
@@ -169,7 +183,7 @@ const Data = ()=>{
  {list1 ? 
  <span >
     {
-        schema[1].schemas[0].tables.map((items)=>
+        schema[1]?.schemas[0]?.tables.map((items)=>
         <ul className="list-disc ml-10">
      <li>{items}</li>
     

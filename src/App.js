@@ -17,7 +17,7 @@ const AppLayout = ()=>{
     return(
         <>
 
-       <Sidebar/>
+       <Sidebar/> 
        <Outlet/>
         </>
     )
@@ -36,7 +36,7 @@ const AppRouter = createBrowserRouter([
             },
             {
                 path:"/project",
-                element:<Data/>
+                element:<Data/>,
             },
             {
                 path:"/dictionary",
